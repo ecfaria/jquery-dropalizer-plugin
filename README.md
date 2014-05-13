@@ -1,7 +1,7 @@
 jQuery Dropalizer Plugin
 ========================
 
-This plugin is under development! Fell free to contribute!
+This plugin is under development! Feel free to contribute!
 
 (Even with this very bad english written ReadMe!)
 
@@ -13,7 +13,7 @@ You just need to use the following structure in your html:
 
 ```html
 <div class="yourClass">
-	<label for="fieldName">Clique to see the options</label>
+	<label for="fieldName">Click to see the options</label>
 	<select name="fieldName">
 		<option value="1">Option 1</option>
 		<option value="2">Option 2</option>
@@ -22,7 +22,7 @@ You just need to use the following structure in your html:
 </div>
 ```
 
-So, you activate the plugin with the command:
+So, you activate the plugin with the method:
 
 ```javascript
 $(yourClass).dropalizer();
@@ -32,7 +32,7 @@ And it will transform your not customizable **select** tag into a group of **div
 
 ```html
 <div class="yourClass dropalizer">
-	<div class="listContainer">Clique to see the options</div>
+	<div class="listContainer">Click to see the options</div>
 	<input type="hidden" name="fieldName">
 	<ul style="display: block;" id="fieldNameList">
 	  <li data-value="1">Option 1</li>
