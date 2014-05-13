@@ -1,7 +1,7 @@
 jQuery Dropalizer Plugin
 ========================
 
-#This plugin is under development! Fell free to contribute!
+##This plugin is under development! Fell free to contribute!
 
 Now you can make your selects fields more beautiful!
 
