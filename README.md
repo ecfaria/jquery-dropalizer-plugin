@@ -26,7 +26,7 @@ So, you activate the plugin with the command:
 $(yourClass).dropalizer();
 ```
 
-And it will transform your not customizable <select> tag into a group of div and ul wich you can style with normal CSS:
+And it will transform your not customizable <select> tag into a group of <div> and <ul> wich works like a select and is fully customizable with normal CSS:
 
 ```html
 <div class="yourClass dropalizer">
