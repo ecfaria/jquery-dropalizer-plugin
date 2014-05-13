@@ -5,6 +5,8 @@ Now you can make your selects fields more beautiful!
 
 Here's all you need to do:
 
-'''javascript
+```javascript
 $(".mySelect").dropalizer();
-'''
+```
+
+
