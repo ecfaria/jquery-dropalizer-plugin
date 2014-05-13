@@ -7,7 +7,7 @@ This plugin is under development! Fell free to contribute!
 
 ## Now you can make your selects fields more beautiful!
 
-[You can see an example here](www.vicioempixels.com/dropalizer)
+###[You can see an example here](http://www.vicioempixels.com/dropalizer)
 
 You just need to use the following structure in your html:
 
