@@ -1,0 +1,20 @@
+{
+  "name": "mendesmiguel",
+  "version": "0.0.1",
+  "description": "Site da Mendes Miguel",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Emilio Faria",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "~3.6.0",
+    "gulp-rename": "~1.1.0",
+    "gulp-concat": "~2.1.7",
+    "gulp-uglify": "~0.2.1",
+    "gulp-jshint": "~1.4.2",
+    "gulp-less": "~1.2.1",
+    "gulp-minify-css": "^0.3.1"
+  }
+}
