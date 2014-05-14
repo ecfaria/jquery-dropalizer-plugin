@@ -2,8 +2,71 @@
 <html>
 <head>
 	<title>Dropalizer Demo</title>
+	<style>
+	*, *:before, *:after {
+	    -webkit-box-sizing: border-box;
+	       -moz-box-sizing: border-box;
+	            box-sizing: border-box;
+	}
+	body {
+	    font-family: arial;
+	    background-color: #1234ef;
+	    color:#fff;
+	    text-align: center;
+	}
+	.listContainer {
+	    border: 2px solid #fff;
+	    color: #fff;
+	    padding: 10px;
+	    text-align: center;
+	    background-color: rgba(255,255,255,0.3)
+	}
+
+	.listContainer:hover {
+		cursor: pointer;
+	}
+
+	.listContainer.isActive {
+		background-color: #ccc;
+	}
+	ul {
+	    border: 1px solid #fff;
+	    margin: -1px 0 0;
+	    position: absolute;
+	    background-color: #fff;
+	    padding: 10px 0px;
+	    width: 100%;
+	}
+	li {
+	    list-style: none outside none;
+	    line-height: 200%;
+	    color: #000;
+	}
+
+	li:hover {
+		cursor: pointer;
+		background-color: #ccc
+	}
+
+	.dropalizer {
+	    width: 50%;
+	    margin: 0 auto;
+	    position: relative;
+	}
+
+	button {
+		border: 2px solid #fff;
+		background-color: #fff;
+		color: #1234ef;
+		padding: 10px;
+		margin-top: 10px;
+		text-transform: uppercase;
+	}
+	</style>
 </head>
 <body>
+<h1>jQuery Dropalizer Plugin</h1>
+<p>Fully customized select fields</p>
 <form action="#">
 	<div class="mySelect">
 		<label for="testField">Clique to see the options</label>
@@ -13,7 +76,7 @@
 			<option value="3">Option 3</option>
 		</select>
 	</div>
-	<input type="button" id="send" value="Send">
+	<button type="button" id="send">What I choosed?</button>
 </form>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="build/js/jquery.dropalizer.min.js"></script>
@@ -21,7 +84,7 @@
 	$(".mySelect").dropalizer();
 	$("#send").click(function(){
 		selectedValue = $("input[name=testField]").val();
-		$(this).after("You selected the item with value="+selectedValue);
+		$(this).after("<p>You selected the item with value="+selectedValue+"</p>");
 	})
 </script>
 </body>
