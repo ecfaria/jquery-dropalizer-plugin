@@ -28,16 +28,16 @@
 
 			});
 
-			var toggleList = $(".arrows, .listContainer"),
-				list = $(".dropalizer ul"),
+			var toggleList = $(this).find(".listContainer"),
+				list = $("#"+selectListId),
 				item = list.find("li");
 
-			toggleList.on("click", function(){
+			toggleList.click(function(){
 				$(".arrows").toggleClass("is-active");
 				$(this).parent().children("ul").fadeToggle(); // hide show list
 			});
 
-			item.on("click", function(){ // click on item
+			item.click(function(){ // click on item
 				var itemText = $(this).text();
 				var itemVal = $(this).attr("data-value");
 				$(this).closest(".dropalizer").find(".listContainer").html(itemText);

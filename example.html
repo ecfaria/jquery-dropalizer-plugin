@@ -19,7 +19,8 @@
 	    color: #fff;
 	    padding: 10px;
 	    text-align: center;
-	    background-color: rgba(255,255,255,0.3)
+	    background-color: rgba(255,255,255,0.3);
+	    margin-top: 20px;
 	}
 
 	.listContainer:hover {
@@ -36,6 +37,7 @@
 	    background-color: #fff;
 	    padding: 10px 0px;
 	    width: 100%;
+	    z-index: 9999;
 	}
 	li {
 	    list-style: none outside none;
@@ -76,6 +78,15 @@
 			<option value="3">Option 3</option>
 		</select>
 	</div>
+
+	<div class="mySelect">
+		<label for="testField2">Clique to see the options</label>
+		<select name="testField2">
+			<option value="1">Option 1</option>
+			<option value="2">Option 2</option>
+			<option value="3">Option 3</option>
+		</select>
+	</div>
 	<button type="button" id="send">What I choosed?</button>
 </form>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
@@ -83,8 +94,11 @@
 <script>
 	$(".mySelect").dropalizer();
 	$("#send").click(function(){
-		selectedValue = $("input[name=testField]").val();
-		$(this).after("<p>You selected the item with value="+selectedValue+"</p>");
+
+		$("input[type=hidden]").each(function(){
+			selectedValue = $(this).val();
+			$(this).after("<p>You selected the item with value="+selectedValue+"</p>");
+		})
 	})
 </script>
 </body>
