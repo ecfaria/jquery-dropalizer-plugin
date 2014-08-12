@@ -2,13 +2,13 @@
 
 	$.fn.dropalizer = function() {
 		return this.each(function(){
-			console.log(this);
+			
 			dropdownMenu = this;
 			
 			$(dropdownMenu).each(function(){
 
-				if(!($(dropdownMenu).hasClass("dropdown"))) {
-					$(this).addClass("dropdown");
+				if(!($(dropdownMenu).hasClass("dropalizer"))) {
+					$(this).addClass("dropalizer");
 				}
 
 				selectMenu = $(this).find("select");
@@ -16,9 +16,8 @@
 				selectLabel = selectMenu.parent().find("label").text();
 				selectListId = selectName+"List";
 
-				$(selectMenu).after("<div class='listContainer'>"+selectLabel+"</div>")
-				$(selectMenu).after("<input type=hidden name="+selectName+">");
-				$("input[name="+selectName+"]").after("<ul id="+selectListId+"></ul>");
+				$(selectMenu).after("<div class='listContainer'>"+selectLabel+"</div><input type=hidden name="+selectName+">");
+				$("input[name="+selectName+"]").after("<ul id="+selectListId+" style=display:none></ul>");
 
 				$(selectMenu).find("option").each(function(){
 					$("ul#"+selectListId).append("<li data-value='"+$(this).val()+"'>"+this.text+"</li>");
@@ -29,25 +28,25 @@
 
 			});
 
-			var toggleList = $(".arrows, .listContainer"),
-				list = $(".dropdown ul"),
+			var toggleList = $(this).find(".listContainer"),
+				list = $("#"+selectListId),
 				item = list.find("li");
 
-			toggleList.on("click", function(){
+			toggleList.click(function(){
 				$(".arrows").toggleClass("is-active");
 				$(this).parent().children("ul").fadeToggle(); // hide show list
 			});
 
-			item.on("click", function(){ // click on item
+			item.click(function(){ // click on item
 				var itemText = $(this).text();
 				var itemVal = $(this).attr("data-value");
-				$(this).closest(".dropdown").find(".listContainer").html(itemText);
-				$(this).closest(".dropdown").find("input[type=hidden]").val(itemVal);
+				$(this).closest(".dropalizer").find(".listContainer").html(itemText);
+				$(this).closest(".dropalizer").find("input[type=hidden]").val(itemVal);
 				list.fadeOut();
 				item.removeClass("is-active");
 				$(this).addClass("is-active");
 				$(".arrows").removeClass("is-active");
 			});	
-		})
+		});
 	};
 })(jQuery);
